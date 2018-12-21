@@ -6,8 +6,8 @@ class UserService
 
   def create_user
     @user = User.find_by(token: @auth_hash[:uid])
-    if @user
-      @user.update(user_params)
+    if @user.persisted?
+      @user.update!(user_params)
     else
       create_new_user
     end
