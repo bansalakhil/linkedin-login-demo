@@ -2,12 +2,15 @@ class OauthController < ApplicationController
 
   def callback
     begin
+      Rails.logger.debug { "data: " }
+      Rails.logger.debug { request.env['omniauth.auth'] }
       saved_user = save_or_update_user(request.env['omniauth.auth'])
       if saved_user
         set_session(request.env['omniauth.auth'])
         redirect_to home_path
       end
     rescue => error
+      Rails.logger.debug {  error.message }
       set_flash_and_redirect
     end
   end
