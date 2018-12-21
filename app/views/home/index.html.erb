@@ -1,0 +1,27 @@
+<% if user_logged_in? %>
+  <h2>Welcome, <%= @current_user.full_name %></h2>
+
+  <%= link_to("All Users", users_path, class: 'btn btn-primary') %>
+
+  <div class="pull-right">
+    <%= button_to("Logout", logout_path, class: 'btn btn-danger', method: :delete) %>
+  </div>
+
+<% end %>
+<hr />
+<table class="table table-responsive table-bordered">
+  <thead>
+    <tr>
+      <th>Profile Picture</th>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Email</th>
+      <th>Industry</th>
+      <th>Location</th>
+      <th>Headline</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: 'users/user', locals: { user: @current_user } %>
+  </tbody>
+</table>

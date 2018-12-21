@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Linked</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+  </head>
+
+  <body>
+    <div class="row">
+      <div class="container">
+        <%= render 'shared/flash_messages' %>
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>
