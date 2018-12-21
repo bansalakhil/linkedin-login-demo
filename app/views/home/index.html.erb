@@ -3,9 +3,7 @@
 
   <%= link_to("All Users", users_path, class: 'btn btn-primary') %>
 
-  <div class="pull-right">
-    <%= button_to("Logout", logout_path, class: 'btn btn-danger', method: :delete) %>
-  </div>
+  <%= render 'shared/logout_button' %>
 
 <% end %>
 <hr />

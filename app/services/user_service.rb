@@ -17,7 +17,6 @@ class UserService
   private def create_new_user
     @user = User.new(user_params)
     @account = @user.build_oauth_account(oauth_account_params)
-    @account.save
     @user.save
   end
 

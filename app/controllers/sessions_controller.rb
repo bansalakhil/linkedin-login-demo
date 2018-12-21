@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
   def destroy
     cookies.clear
     reset_session
-    redirect_to login_path, info: 'Logged out successfull.'
+    redirect_to login_path, info: 'Logged out successfully.'
   end
 
   private def check_exisiting_session
