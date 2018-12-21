@@ -6,4 +6,9 @@ class User < ApplicationRecord
     firstname + lastname
   end
 
+  def masked_entity(key)
+    attribute = send(key)
+    attribute[0] + attribute[1..-1].gsub(/\w/, '*')
+  end
+
 end
